@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">Dagger 2 Demo</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="open_weather_map_api_key">REPLACE_WITH_YOUR_KEY</string>
+    <string name="low_temp_format">Low: %1$.1f&#xb0;</string>
+    <string name="high_temp_format">High: %1$.1f&#xb0;</string>
+    <string name="location_rationale_title">Location permission is required</string>
+    <string name="location_rationale_message">This app needs access to your GPS to provide you with location-based weather information</string>
+    <string name="forecast">Forecast</string>
+    <string name="degree_symbol_format">%1$.1f&#xb0;</string>
+    <string name="descriptor_with_degree_format">%1$s: %2$.1f&#xb0;</string>
+    <string name="get_location">Get Location</string>
+    <string name="location_permission_denied">Location Permission Denied. Unable to load weather for location.</string>
+    <string name="humidity_format">Humidity: %1$.1f%%</string>
+    <string name="current">Current</string>
+    <string name="high">High</string>
+    <string name="low">Low</string>
+    <string name="morning">Morning</string>
+    <string name="evening">Evening</string>
+    <string name="night">Night</string>
+    <string name="day">Day</string>
+    <string name="enable">Enable</string>
+
+    <string-array name="cities">
+        <item>Lincoln</item>
+        <item>Grand Island</item>
+        <item>Orlando</item>
+        <item>Miami</item>
+        <item>Sydney</item>
+        <item>Los Angeles</item>
+        <item>San Fran</item>
+        <item>Mountain View</item>
+        <item>Seattle</item>
+        <item>London</item>
+        <item>Paris</item>
+        <item>Istanbul</item>
+        <item>Kansas City</item>
+        <item>Chicago</item>
+        <item>New York</item>
+        <item>Denver</item>
+        <item>Winter Park</item>
+        <item>Newark</item>
+        <item>Toronto</item>
+        <item>Boston</item>
+        <item>Lansing</item>
+        <item>Tokoyo</item>
+        <item>Beijing</item>
+        <item>Athens</item>
+        <item>St Paul</item>
+        <item>Minneapolis</item>
+        <item>Fremont</item>
+        <item>Austin</item>
+        <item>Dallas</item>
+        <item>San Antonio</item>
+        <item>Moscow</item>
+        <item>Berlin</item>
+        <item>Glasgow</item>
+        <item>Stockholm</item>
+        <item>Dublin</item>
+        <item>Shanghai</item>
+        <item>Omaha</item>
+        <item>Ningbo</item>
+        <item>Osaka</item>
+        <item>Patna</item>
+        <item>Perth</item>
+        <item>Philadelphia</item>
+        <item>Pittsburgh</item>
+        <item>Porto</item>
+        <item>Porto Alegre</item>
+        <item>Prague</item>
+        <item>Tulsa</item>
+        <item>Turin</item>
+        <item>Uberlandia</item>
+        <item>Valencia</item>
+        <item>Vancouver</item>
+        <item>Vienna</item>
+        <item>Visakhapatnam</item>
+        <item>Xiamen</item>
+        <item>Xian</item>
+        <item>Xuzhou</item>
+        <item>Bilbao</item>
+        <item>Calgary</item>
+        <item>Frankfurt</item>
+    </string-array>
+</resources>

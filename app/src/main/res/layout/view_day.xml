@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              android:padding="10dp">
+
+    <TextView
+        android:id="@+id/tv_date"
+        style="@style/text_view_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        tools:text="Monday 13, 2015"/>
+
+    <TextView
+        android:id="@+id/tv_description"
+        style="@style/text_view_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="12dp"
+        tools:text="Cloudy"/>
+
+
+    <TextView
+        android:id="@+id/tv_high"
+        style="@style/text_view_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="High: 40"/>
+
+    <TextView
+        android:id="@+id/tv_low"
+        style="@style/text_view_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Low: 20"/>
+
+    <TextView
+        android:id="@+id/tv_humidity"
+        style="@style/text_view_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Humidity: 90%"/>
+
+    <TextView
+        android:id="@+id/tv_morning"
+        style="@style/text_view_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Morning: 15"/>
+
+    <TextView
+        android:id="@+id/tv_day"
+        style="@style/text_view_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Day: 35"/>
+
+    <TextView
+        android:id="@+id/tv_evening"
+        style="@style/text_view_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Evening: 35"/>
+
+    <TextView
+        android:id="@+id/tv_night"
+        style="@style/text_view_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Night: 25"/>
+</LinearLayout>
