@@ -22,4 +22,8 @@ public class MainFragmentTest extends FragmentTestBase {
         onView(withId(R.id.tv_high)).check(matches(withText(stringHelper.getString(R.string.high_temp_format, TEMP_MAX))));
         onView(withId(R.id.tv_low)).check(matches(withText(stringHelper.getString(R.string.low_temp_format, TEMP_MIN))));
     }
+
+    @Override protected boolean returnIdFromSharedPrefs() {
+        return false;
+    }
 }

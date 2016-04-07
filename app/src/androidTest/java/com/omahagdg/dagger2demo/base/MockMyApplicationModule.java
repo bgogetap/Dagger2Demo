@@ -2,7 +2,6 @@ package com.omahagdg.dagger2demo.base;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 
 import com.omahagdg.dagger2demo.R;
 import com.omahagdg.dagger2demo.dagger.ComponentCache;
@@ -32,7 +31,7 @@ public class MockMyApplicationModule {
     }
 
     @Provides @Singleton SharedPreferences provideSharedPreferences() {
-        return PreferenceManager.getDefaultSharedPreferences(application);
+        return Mockito.mock(SharedPreferences.class);
     }
 
     @Provides @Singleton OkHttpClient provideOkHttpClient() {

@@ -30,6 +30,9 @@ import static android.location.LocationManager.GPS_PROVIDER;
 public class MainPresenter extends Presenter<MainView>
         implements LocationPermissionHelper.LocationPermissionResultListener {
 
+    static final String LAST_CITY_ID_KEY = "last_city_id";
+    static final long INVALID_CITY_ID = -1;
+
     private final WeatherLoader weatherLoader;
     private final SharedPreferences sharedPreferences;
     private final StringHelper stringHelper;
@@ -57,8 +60,8 @@ public class MainPresenter extends Presenter<MainView>
     private void loadData() {
         if (data == null) {
             data = new ArrayList<>();
-            long lastCityId = sharedPreferences.getLong("last_city_id", -1);
-            if (lastCityId == -1) {
+            long lastCityId = sharedPreferences.getLong(LAST_CITY_ID_KEY, INVALID_CITY_ID);
+            if (lastCityId == INVALID_CITY_ID) {
                 loadWeatherForCity("Omaha");
             } else {
                 loadWeatherForCityId(lastCityId);
@@ -82,6 +85,7 @@ public class MainPresenter extends Presenter<MainView>
         if (getView() != null) {
             getView().setData(data);
         }
+        sharedPreferences.edit().putLong(LAST_CITY_ID_KEY, data.get(0).id()).apply();
     }
 
     void refreshData() {
@@ -98,8 +102,7 @@ public class MainPresenter extends Presenter<MainView>
         if (permissionHelper.hasPermission(Permission.LOCATION)) {
             Location lastKnownLocation = getLastKnownLocation();
             if (lastKnownLocation != null) {
-                weatherLoader.getWeatherForLocation(lastKnownLocation.getLatitude(),
-                        lastKnownLocation.getLongitude())
+                weatherLoader.getWeatherForLocation(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude())
                         .filter(response -> response != null)
                         .subscribe(this::weatherLoaded,
                                 throwable -> Timber.e("Error loading weather for location", throwable),

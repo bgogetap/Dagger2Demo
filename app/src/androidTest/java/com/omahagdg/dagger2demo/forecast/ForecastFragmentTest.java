@@ -41,6 +41,10 @@ public class ForecastFragmentTest extends FragmentTestBase {
         onView(withId(R.id.tv_city_name)).perform(click());
     }
 
+    @Override protected boolean returnIdFromSharedPrefs() {
+        return false;
+    }
+
     @Test public void testWeatherResponseDataIsDisplayedInHeader() {
         onView(withId(R.id.tv_city_name)).check(matches(withText(CITY_NAME)));
         onView(withId(R.id.tv_temp)).check(matches(withText(stringHelper.getString(R.string.degree_symbol_format, TEMP))));
