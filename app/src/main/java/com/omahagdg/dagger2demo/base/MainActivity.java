@@ -89,6 +89,11 @@ public class MainActivity extends AppCompatActivity
         resultDelegates.remove(delegate);
     }
 
+    /**
+     * Opens the page for this app in the phone's system Settings. This allows the user to click
+     * on the Permissions menu and manually enable permissions. This is only given as an option
+     * if the user has chosen to disable any requests for permissions in the app.
+     */
     @Override public void goToAppSystemSettings() {
         Intent appSettingsIntent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
                 Uri.fromParts("package", getPackageName(), null));

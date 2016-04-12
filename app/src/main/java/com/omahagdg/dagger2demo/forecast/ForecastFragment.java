@@ -166,6 +166,14 @@ public class ForecastFragment extends Fragment
         return getClass().getName();
     }
 
+    /**
+     * The component could be built here if we had passed in a {@link Context}. This would have
+     * allowed us to provide the {@link WeatherResponse} without it needing to implement Parcelable.
+     * While it is easy to use POJOs in Dagger modules, we run into an issue when we encounter
+     * process death. To make the experience as seamless as possible, it is ideal to have the
+     * ability to recreate your modules after process death. This means that if you require data
+     * that came from another screen, you'll need it to be parcelable so it can be put into a Bundle
+     */
     public static ForecastFragment newInstance(
             WeatherResponse weatherResponse, String[] transitionNames) {
         ForecastFragment fragment = new ForecastFragment();

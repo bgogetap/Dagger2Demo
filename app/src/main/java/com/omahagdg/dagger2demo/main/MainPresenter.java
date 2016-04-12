@@ -85,7 +85,9 @@ public class MainPresenter extends Presenter<MainView>
         if (getView() != null) {
             getView().setData(data);
         }
-        sharedPreferences.edit().putLong(LAST_CITY_ID_KEY, data.get(0).id()).apply();
+        if (data.size() > 0) {
+            sharedPreferences.edit().putLong(LAST_CITY_ID_KEY, data.get(0).id()).apply();
+        }
     }
 
     void refreshData() {

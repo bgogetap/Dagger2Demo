@@ -32,7 +32,7 @@ public class MyApplicationModule {
         this.application = application;
     }
 
-    @Provides @Singleton Context provideApplicationContext() {
+    @Provides Context provideApplicationContext() {
         return application;
     }
 

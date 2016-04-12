@@ -98,6 +98,7 @@ public class MainFragment extends Fragment
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public void goToDetails(int position) {
+        // Shared element transition logic start
         WeatherResponse weatherResponse = data.get(position);
         View parentView = recyclerView.findViewHolderForAdapterPosition(position).itemView;
         View sharedImage = ButterKnife.findById(parentView, R.id.iv_weather_icon);
@@ -108,6 +109,7 @@ public class MainFragment extends Fragment
         ForecastFragment forecastFragment = ForecastFragment.newInstance(
                 weatherResponse, transitionNames);
         setUpDetailsTransition(this, forecastFragment, getContext());
+        // Shared element transition logic end
 
         getActivity().getSupportFragmentManager().beginTransaction()
                 .replace(R.id.main_container, forecastFragment, "detail_fragment")

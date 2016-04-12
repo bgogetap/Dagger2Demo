@@ -19,6 +19,13 @@ public class DaggerContextWrapper extends ContextWrapper {
         return tag;
     }
 
+    /**
+     * By intercepting calls to the Layout Inflater service, we can ensure that all Contexts that
+     * are passed down from our scope root (the Fragments) will be instances of DaggerContextWrapper
+     * This means that we can obtain the {@link #getTag()} from, for instance, a View that we
+     * manually inflate. Basically, anything with access to Context in a particular scope can be
+     * injected with {@link Injector#getComponent(Context)}
+     */
     @Override public Object getSystemService(String name) {
         if (LAYOUT_INFLATER_SERVICE.equals(name)) {
             if (layoutInflater == null) {
