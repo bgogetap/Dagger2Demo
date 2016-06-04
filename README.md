@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/bgogetap/Dagger2Demo.svg?branch=master)](https://travis-ci.org/bgogetap/Dagger2Demo)
 # Dagger2Demo
 Small project demoing the use of Dagger 2, Retrofit, and MVP
 
