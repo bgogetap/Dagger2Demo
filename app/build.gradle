@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt' // Dagger 2
 apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.getkeepsafe.dexcount'
 
 buildscript {
     repositories {
@@ -11,12 +12,13 @@ buildscript {
 
     dependencies {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8' // Dagger 2
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.3.1'
     }
 }
 
 android {
     compileSdkVersion 23
-    buildToolsVersion '23.0.2'
+    buildToolsVersion '23.0.3'
 
     defaultConfig {
         applicationId "com.omahagdg.dagger2demo"
@@ -49,16 +51,16 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile "com.android.support:support-v4:$rootProject.supportLibraryVersion"
-    compile "com.android.support:appcompat-v7:$rootProject.supportLibraryVersion"
-    compile "com.android.support:design:$rootProject.supportLibraryVersion"
-    compile "com.android.support:cardview-v7:$rootProject.supportLibraryVersion"
-    compile "com.squareup.retrofit2:retrofit:$rootProject.retrofitVersion"
-    compile "com.squareup.retrofit2:converter-gson:$rootProject.retrofitVersion"
-    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.retrofitVersion"
+    compile "com.android.support:support-v4:$supportLibraryVersion"
+    compile "com.android.support:appcompat-v7:$supportLibraryVersion"
+    compile "com.android.support:design:$supportLibraryVersion"
+    compile "com.android.support:cardview-v7:$supportLibraryVersion"
+    compile "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava:$retrofitVersion"
     // For Dagger
-    compile "com.google.dagger:dagger:$rootProject.daggerVersion"
-    apt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    compile "com.google.dagger:dagger:$daggerVersion"
+    apt "com.google.dagger:dagger-compiler:$daggerVersion"
     compile 'javax.annotation:javax.annotation-api:1.2'
 
     compile 'com.jakewharton.timber:timber:3.1.0'
@@ -74,29 +76,29 @@ dependencies {
 
     // Test Dependencies
     testCompile 'junit:junit:4.12'
-    testCompile "org.mockito:mockito-all:$rootProject.mockitoVersion"
-    testCompile "org.hamcrest:hamcrest-all:$rootProject.hamcrestVersion"
-    testCompile "org.powermock:powermock-module-junit4:$rootProject.powerMockito"
-    testCompile "org.powermock:powermock-api-mockito:$rootProject.powerMockito"
+    testCompile "org.mockito:mockito-all:$mockitoVersion"
+    testCompile "org.hamcrest:hamcrest-all:$hamcrestVersion"
+    testCompile "org.powermock:powermock-module-junit4:$powerMockito"
+    testCompile "org.powermock:powermock-api-mockito:$powerMockito"
     testCompile 'org.robolectric:robolectric:3.0'
 
     // Espresso UI Testing dependencies.
     // Force use of updated support modules to resolve conflicts
-    androidTestCompile 'com.android.support:support-v4:23.2.0'
-    androidTestCompile 'com.android.support:support-annotations:23.2.0'
-    androidTestCompile "com.android.support.test.espresso:espresso-core:$rootProject.espressoVersion"
-    androidTestCompile("com.android.support.test.espresso:espresso-contrib:$rootProject.espressoVersion")
+    androidTestCompile "com.android.support:support-v4:$supportLibraryVersion"
+    androidTestCompile "com.android.support:support-annotations:$supportLibraryVersion"
+    androidTestCompile "com.android.support.test.espresso:espresso-core:$espressoVersion"
+    androidTestCompile("com.android.support.test.espresso:espresso-contrib:$espressoVersion")
             {
                 exclude group: 'com.android.support', module: 'appcompat'
                 exclude group: 'com.android.support', module: 'support-v4'
                 exclude module: 'recyclerview-v7'
             }
-    androidTestCompile "com.android.support.test.espresso:espresso-intents:$rootProject.espressoVersion"
+    androidTestCompile "com.android.support.test.espresso:espresso-intents:$espressoVersion"
     // Android Testing Support Library's runner and rules
-    androidTestCompile "com.android.support.test:runner:$rootProject.runnerVersion"
-    androidTestCompile "com.android.support.test:rules:$rootProject.runnerVersion"
-    androidTestCompile "org.mockito:mockito-core:$rootProject.mockitoVersion"
+    androidTestCompile "com.android.support.test:runner:$runnerVersion"
+    androidTestCompile "com.android.support.test:rules:$runnerVersion"
+    androidTestCompile "org.mockito:mockito-core:$mockitoVersion"
     androidTestCompile 'com.google.dexmaker:dexmaker:1.2'
     androidTestCompile 'com.google.dexmaker:dexmaker-mockito:1.2'
-    androidTestApt "com.google.dagger:dagger-compiler:$rootProject.daggerVersion"
+    androidTestApt "com.google.dagger:dagger-compiler:$daggerVersion"
 }
