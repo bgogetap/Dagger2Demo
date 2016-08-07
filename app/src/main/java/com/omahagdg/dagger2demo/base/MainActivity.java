@@ -25,7 +25,7 @@ import java.util.Set;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static android.content.pm.PackageManager.PERMISSION_GRANTED;
@@ -38,8 +38,8 @@ public class MainActivity extends AppCompatActivity
     @Inject PermissionHelper permissionHelper;
     @Inject ActivityPresenter activityPresenter;
 
-    @Bind(R.id.main_container) FrameLayout container;
-    @Bind(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.main_container) FrameLayout container;
+    @BindView(R.id.toolbar) Toolbar toolbar;
 
     private Set<ActivityResultDelegate> resultDelegates = new LinkedHashSet<>();
 

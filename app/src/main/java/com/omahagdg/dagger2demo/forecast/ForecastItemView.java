@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -27,9 +27,9 @@ public class ForecastItemView extends CardView {
     @Inject SimpleDateFormat simpleDateFormat;
     @Inject ForecastPresenter presenter;
 
-    @Bind(R.id.tv_date) TextView dateText;
-    @Bind(R.id.tv_temp_min) TextView tempMinText;
-    @Bind(R.id.tv_temp_max) TextView tempMaxText;
+    @BindView(R.id.tv_date) TextView dateText;
+    @BindView(R.id.tv_temp_min) TextView tempMinText;
+    @BindView(R.id.tv_temp_max) TextView tempMaxText;
 
     private ForecastResponse.Day day;
 

@@ -31,7 +31,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -49,9 +49,9 @@ public class MainFragment extends Fragment
     @Inject ActivityPresenter activityPresenter;
     @Inject LocationPermissionHelper locationPermissionHelper;
 
-    @Bind(R.id.fab) FloatingActionButton fab;
-    @Bind(R.id.recycler_view) RecyclerView recyclerView;
-    @Bind(R.id.swipe_refresh_layout) SwipeRefreshLayout swipeRefreshLayout;
+    @BindView(R.id.fab) FloatingActionButton fab;
+    @BindView(R.id.recycler_view) RecyclerView recyclerView;
+    @BindView(R.id.swipe_refresh_layout) SwipeRefreshLayout swipeRefreshLayout;
 
     private WeatherAdapter adapter;
     private List<WeatherResponse> data;

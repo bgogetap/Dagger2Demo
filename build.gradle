@@ -29,9 +29,10 @@ task clean(type: Delete) {
 }
 
 ext {
-    supportLibraryVersion = '23.4.0'
-    retrofitVersion = '2.0.0-beta4'
-    daggerVersion = '2.0.1'
+    supportLibraryVersion = '24.1.1'
+    retrofitVersion = '2.1.0'
+    butterknifeVersion = '8.2.1'
+    daggerVersion = '2.6'
     mockitoVersion = '1.10.19'
     powerMockito = '1.6.4'
     hamcrestVersion = '1.3'

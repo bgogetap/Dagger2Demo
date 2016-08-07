@@ -22,13 +22,13 @@ import com.omahagdg.dagger2demo.dagger.ComponentCache;
 import com.omahagdg.dagger2demo.dagger.DaggerContextWrapper;
 import com.omahagdg.dagger2demo.dagger.Injector;
 import com.omahagdg.dagger2demo.dagger.Scoped;
-import com.omahagdg.dagger2demo.main.WeatherState;
 import com.omahagdg.dagger2demo.main.WeatherResponse;
+import com.omahagdg.dagger2demo.main.WeatherState;
 import com.omahagdg.dagger2demo.utils.ResourcesHelper;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static android.view.ViewAnimationUtils.createCircularReveal;
@@ -40,14 +40,14 @@ public class ForecastFragment extends Fragment
 
     @Inject ForecastPresenter presenter;
 
-    @Bind(R.id.iv_weather_icon) ImageView iconImage;
-    @Bind(R.id.tv_city_name) TextView cityName;
-    @Bind(R.id.tv_temp) TextView tempText;
-    @Bind(R.id.ll_forecast_items) View forecastItems;
-    @Bind(R.id.forecast_container) LinearLayout forecastContainer;
-    @Bind(R.id.shadow_view) View shadowView;
-    @Bind(R.id.v_background) View headerBackground;
-    @Bind(R.id.cv_header) CardView headerCardView;
+    @BindView(R.id.iv_weather_icon) ImageView iconImage;
+    @BindView(R.id.tv_city_name) TextView cityName;
+    @BindView(R.id.tv_temp) TextView tempText;
+    @BindView(R.id.ll_forecast_items) View forecastItems;
+    @BindView(R.id.forecast_container) LinearLayout forecastContainer;
+    @BindView(R.id.shadow_view) View shadowView;
+    @BindView(R.id.v_background) View headerBackground;
+    @BindView(R.id.cv_header) CardView headerCardView;
 
     private int backgroundColor;
 

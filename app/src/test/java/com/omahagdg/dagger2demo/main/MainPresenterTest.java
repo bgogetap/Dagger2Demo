@@ -1,5 +1,6 @@
 package com.omahagdg.dagger2demo.main;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 
@@ -16,6 +17,8 @@ import java.util.Collections;
 
 import rx.Observable;
 
+import static org.mockito.Matchers.anyLong;
+import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
@@ -29,6 +32,7 @@ public class MainPresenterTest {
 
     @Mock MainView mainView;
     @Mock SharedPreferences sharedPreferences;
+    @Mock SharedPreferences.Editor editor;
     @Mock WeatherLoader weatherLoader;
     @Mock Context context;
 
@@ -40,11 +44,14 @@ public class MainPresenterTest {
     private Observable<WeatherResponse> responseObservable;
     private Observable<WeatherResponse> anotherResponseObservable;
 
+    @SuppressLint("CommitPrefEdits")
     @Before
     public void setupPresenter() {
         MockitoAnnotations.initMocks(this);
         PermissionHelper permissionHelper = new PermissionHelper();
         StringHelper stringHelper = new StringHelper(context);
+        when(sharedPreferences.edit()).thenReturn(editor);
+        when(editor.putLong(anyString(), anyLong())).thenReturn(editor);
         mainPresenter = new MainPresenter(weatherLoader, sharedPreferences, stringHelper, permissionHelper);
         responseObservable = Observable.just(weatherResponse);
         anotherResponseObservable = Observable.just(anotherWeatherResponse);

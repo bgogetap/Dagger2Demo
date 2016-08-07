@@ -15,7 +15,7 @@ import com.omahagdg.dagger2demo.utils.ResourcesHelper;
 
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.omahagdg.dagger2demo.utils.ResourcesHelper.getDrawable;
@@ -66,12 +66,12 @@ public class WeatherAdapter extends RecyclerView.Adapter<WeatherAdapter.WeatherV
 
     static final class WeatherViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.tv_city_name) TextView cityName;
-        @Bind(R.id.tv_temp) TextView currentTemp;
-        @Bind(R.id.tv_low) TextView lowTemp;
-        @Bind(R.id.tv_high) TextView highTemp;
-        @Bind(R.id.iv_weather_icon) ImageView weatherIcon;
-        @Bind(R.id.cv_weather_item) CardView parentCardView;
+        @BindView(R.id.tv_city_name) TextView cityName;
+        @BindView(R.id.tv_temp) TextView currentTemp;
+        @BindView(R.id.tv_low) TextView lowTemp;
+        @BindView(R.id.tv_high) TextView highTemp;
+        @BindView(R.id.iv_weather_icon) ImageView weatherIcon;
+        @BindView(R.id.cv_weather_item) CardView parentCardView;
 
         public WeatherViewHolder(View itemView) {
             super(itemView);

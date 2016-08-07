@@ -15,22 +15,22 @@ import java.text.SimpleDateFormat;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class DayDetailView extends CardView {
 
     @Inject SimpleDateFormat simpleDateFormat;
 
-    @Bind(R.id.tv_date) TextView dateText;
-    @Bind(R.id.tv_day) TextView dayText;
-    @Bind(R.id.tv_high) TextView highText;
-    @Bind(R.id.tv_low) TextView lowText;
-    @Bind(R.id.tv_humidity) TextView humidityText;
-    @Bind(R.id.tv_morning) TextView morningText;
-    @Bind(R.id.tv_evening) TextView eveningText;
-    @Bind(R.id.tv_night) TextView nightText;
-    @Bind(R.id.tv_description) TextView weatherDescription;
+    @BindView(R.id.tv_date) TextView dateText;
+    @BindView(R.id.tv_day) TextView dayText;
+    @BindView(R.id.tv_high) TextView highText;
+    @BindView(R.id.tv_low) TextView lowText;
+    @BindView(R.id.tv_humidity) TextView humidityText;
+    @BindView(R.id.tv_morning) TextView morningText;
+    @BindView(R.id.tv_evening) TextView eveningText;
+    @BindView(R.id.tv_night) TextView nightText;
+    @BindView(R.id.tv_description) TextView weatherDescription;
 
     public DayDetailView(Context context) {
         super(context);
