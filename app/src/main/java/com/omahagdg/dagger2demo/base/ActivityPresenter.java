@@ -4,9 +4,9 @@ import javax.inject.Inject;
 import javax.inject.Singleton;
 
 @Singleton
-public class ActivityPresenter extends Presenter<ActivityPresenter.View> {
+public final class ActivityPresenter extends Presenter<ActivityPresenter.View> {
 
-    @Inject public ActivityPresenter() {
+    @Inject ActivityPresenter() {
     }
 
     public void registerActivityResultDelegate(ActivityResultDelegate delegate) {
